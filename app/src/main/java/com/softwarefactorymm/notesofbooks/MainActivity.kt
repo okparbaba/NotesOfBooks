@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import com.softwarefactorymm.notesofbooks.ui.main.SectionsPagerAdapter
+import com.softwarefactorymm.notesofbooks.utils.FontUtil.Companion.isValid
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +22,21 @@ class MainActivity : AppCompatActivity() {
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = findViewById(R.id.tabs)
         tabs.setupWithViewPager(viewPager)
+        val currentLocale = Locale.getDefault().language
+        isValid = if (currentLocale.toString() == "my") {
+            setLocale("my")
+            true
+        } else {
+            setLocale("zy")
+            false
+        }
 
+    }
+    private fun setLocale(lang: String) {
+        val locale = Locale(lang)
+        val config = baseContext.resources.configuration
+        Locale.setDefault(locale)
+        config.setLocale(locale)
+        baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
     }
 }

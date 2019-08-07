@@ -5,10 +5,33 @@
              android:layout_height="match_parent"
              tools:context=".ui.main.FragmentNotes">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
+            >
+        <TextView android:layout_width="match_parent"
+                  android:textSize="20sp"
+                  android:id="@+id/tvNoInternet"
+                  android:background="@drawable/nointernet"
+                  android:layout_centerInParent="true"
+                  android:textColor="@android:color/white"
+                  android:textAlignment="center"
+                  android:visibility="gone"
+                  android:padding="4dp"
+                  android:text="No Internet Connection"
+                  android:layout_height="wrap_content"/>
 
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_note"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        <com.github.ybq.android.spinkit.SpinKitView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/spin_kit"
+                android:layout_centerInParent="true"                style="@style/SpinKitView.Large.FadingCircle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:SpinKit_Color="@color/colorAccent" />
+    </RelativeLayout>
 </FrameLayout>

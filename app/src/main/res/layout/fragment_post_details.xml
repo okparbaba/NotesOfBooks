@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".ui.main.PostDetailsFragment">
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="5dp"
+                  android:orientation="vertical">
+
+        <ScrollView android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_margin="5dp"
+                          android:orientation="vertical">
+
+                <ImageView android:layout_width="match_parent"
+                           android:id="@+id/imgPostDetails"
+                           android:transitionName="home"
+                           android:scaleType="centerCrop"
+                           android:src="@mipmap/my_icon"
+                           android:layout_height="200dp"/>
+                <TextView
+                        android:id="@+id/tvDetailsTitle"
+                        android:layout_width="match_parent"
+                        android:textSize="20sp"
+                        android:padding="10dp"
+                        android:layout_height="wrap_content"
+                        android:text="some"/>
+                <TextView
+                        android:id="@+id/tvDetailsBody"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:padding="5dp"
+                        android:textSize="17sp"
+                        android:text="some"/>
+                <TextView android:layout_width="wrap_content"
+                          android:id="@+id/tvDetailDate"
+                          android:text="00.00.0000"
+                          android:textStyle="bold"
+                          android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</FrameLayout>
